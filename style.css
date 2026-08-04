@@ -1,0 +1,1738 @@
+@charset "UTF-8";
+
+/* =========================================================
+   韓国旅行ガイド
+   style.css
+
+   Part 1
+   - 基本設定
+   - カラー変数
+   - リセット
+   - 全体レイアウト
+   - ヘッダー
+   - 共通カードデザイン
+
+   Design Concept:
+   Wanderlog × Airbnb × MUJI × Notion
+========================================================= */
+
+
+/* =========================================================
+   CSS変数
+========================================================= */
+
+:root {
+
+    /* 背景 */
+    --bg-color: #FFFDF9;
+
+    /* アクセント */
+    --accent-color: #CFA46A;
+
+    /* アクセント薄色 */
+    --accent-light: #EAD7B8;
+
+    /* 文字 */
+    --text-color: #333333;
+
+    /* サブ文字 */
+    --sub-text-color: #777777;
+
+    /* カード */
+    --card-color: #FFFFFF;
+
+    /* ボーダー */
+    --border-color: #EFE7DA;
+
+    /* 影 */
+    --shadow:
+        0 8px 24px rgba(80, 60, 30, 0.08);
+
+    /* 強い影 */
+    --shadow-hover:
+        0 12px 30px rgba(80, 60, 30, 0.14);
+
+
+    /* 角丸 */
+    --radius:
+        18px;
+
+    --radius-small:
+        12px;
+
+
+    /* アニメーション */
+    --transition:
+        0.3s ease;
+
+}
+
+
+/* =========================================================
+   リセット
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    font-size: 16px;
+
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        var(--bg-color);
+
+    color:
+        var(--text-color);
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    line-height:
+        1.7;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+}
+
+
+button,
+input {
+
+    font-family:
+        inherit;
+
+}
+
+
+button {
+
+    border:
+        none;
+
+    background:
+        none;
+
+    cursor:
+        pointer;
+
+}
+
+
+a {
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
+
+}
+
+
+/* =========================================================
+   アプリコンテナ
+========================================================= */
+
+.app {
+
+    width:
+        100%;
+
+    max-width:
+        430px;
+
+    min-height:
+        100vh;
+
+    margin:
+        0 auto;
+
+    padding-bottom:
+        90px;
+
+}
+
+
+/* =========================================================
+   ヘッダー
+========================================================= */
+
+.app-header {
+
+    padding:
+        36px 22px 28px;
+
+}
+
+
+.header-content {
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #fff8ed
+        );
+
+    border-radius:
+        26px;
+
+    padding:
+        28px 22px;
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+/* 小さいタイトル */
+
+.sub-title {
+
+    color:
+        var(--accent-color);
+
+    font-size:
+        0.85rem;
+
+    letter-spacing:
+        0.08em;
+
+    margin-bottom:
+        6px;
+
+}
+
+
+/* メインタイトル */
+
+.app-header h1 {
+
+    font-size:
+        1.65rem;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.03em;
+
+    margin-bottom:
+        12px;
+
+}
+
+
+/* 説明 */
+
+.description {
+
+    color:
+        var(--sub-text-color);
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/* =========================================================
+   メインエリア
+========================================================= */
+
+main {
+
+    padding:
+        0 18px;
+
+}
+
+
+.page {
+
+    display:
+        none;
+
+    animation:
+        fadeIn 0.35s ease;
+
+}
+
+
+.page.active-page {
+
+    display:
+        block;
+
+}
+
+
+/* ページ切替アニメーション */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(10px);
+
+    }
+
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   セクションタイトル
+========================================================= */
+
+.section-title {
+
+    margin:
+        12px 0 22px;
+
+}
+
+
+.section-title h2 {
+
+    font-size:
+        1.35rem;
+
+    margin:
+        12px 0 6px;
+
+}
+
+
+.section-title p {
+
+    color:
+        var(--sub-text-color);
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/* =========================================================
+   戻るボタン
+========================================================= */
+
+.back-button {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        var(--accent-color);
+
+    font-size:
+        0.9rem;
+
+    padding:
+        6px 0;
+
+}
+
+
+/* =========================================================
+   共通カード
+========================================================= */
+
+.card,
+.info-card,
+.phrase-card,
+.menu-card {
+
+    background:
+        var(--card-color);
+
+    border-radius:
+        var(--radius);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+/* カード hover */
+
+.menu-card:hover,
+.info-card:hover,
+.phrase-card:hover {
+
+    box-shadow:
+        var(--shadow-hover);
+
+}
+
+
+/* =========================================================
+   カード共通ヘッダー
+========================================================= */
+
+.card-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        14px;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+.card-header h3 {
+
+    font-size:
+        1.05rem;
+
+}
+
+
+.card-header p {
+
+    color:
+        var(--sub-text-color);
+
+    font-size:
+        0.8rem;
+
+}
+
+
+/* =========================================================
+   アイコン丸
+========================================================= */
+
+.icon-circle {
+
+    width:
+        46px;
+
+    height:
+        46px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        #FBF1E2;
+
+    color:
+        var(--accent-color);
+
+    font-size:
+        1.2rem;
+
+}
+
+
+/* =========================================================
+   CSS Part 2
+
+   - 観光マップ
+   - Wanderlog iframe
+   - フォールバック表示
+   - ホームメニューカード
+   - フレーズ検索
+   - フレーズカード
+========================================================= */
+
+
+/* =========================================================
+   観光マップカード
+========================================================= */
+
+.map-card {
+
+    padding:
+        20px;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+/* =========================================================
+   Wanderlog iframe
+========================================================= */
+
+#wanderlog-wrapper {
+
+    width:
+        100%;
+
+    height:
+        360px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        var(--radius);
+
+    background:
+        #f5f2ec;
+
+}
+
+
+#wanderlog-frame {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    border:
+        none;
+
+}
+
+
+/* =========================================================
+   Wanderlog フォールバック
+========================================================= */
+
+.hidden {
+
+    display:
+        none !important;
+
+}
+
+
+#wanderlog-fallback {
+
+    width:
+        100%;
+
+}
+
+
+.fallback-content {
+
+    text-align:
+        center;
+
+    padding:
+        32px 18px;
+
+}
+
+
+.fallback-icon {
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    margin:
+        0 auto 18px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        #FBF1E2;
+
+    color:
+        var(--accent-color);
+
+    font-size:
+        1.5rem;
+
+}
+
+
+.fallback-content h4 {
+
+    font-size:
+        1rem;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.fallback-content p {
+
+    color:
+        var(--sub-text-color);
+
+    font-size:
+        0.85rem;
+
+    margin-bottom:
+        18px;
+
+}
+
+
+/* =========================================================
+   メインメニューカード
+========================================================= */
+
+.menu-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        14px;
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.menu-card {
+
+    text-align:
+        left;
+
+    padding:
+        18px 14px;
+
+    min-height:
+        170px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.menu-card:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+.menu-icon {
+
+    font-size:
+        1.8rem;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+.menu-card h3 {
+
+    font-size:
+        0.98rem;
+
+    margin-bottom:
+        8px;
+
+}
+
+
+.menu-card p {
+
+    font-size:
+        0.78rem;
+
+    color:
+        var(--sub-text-color);
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================================
+   検索ボックス
+========================================================= */
+
+.search-box {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid var(--border-color);
+
+    border-radius:
+        999px;
+
+    padding:
+        12px 16px;
+
+    margin-bottom:
+        20px;
+
+    box-shadow:
+        0 4px 14px rgba(80,60,30,0.05);
+
+}
+
+
+.search-box i {
+
+    color:
+        var(--accent-color);
+
+}
+
+
+.search-box input {
+
+    width:
+        100%;
+
+    border:
+        none;
+
+    outline:
+        none;
+
+    background:
+        transparent;
+
+    font-size:
+        0.9rem;
+
+}
+
+
+/* =========================================================
+   フレーズカテゴリー
+========================================================= */
+
+.phrase-category {
+
+    margin-bottom:
+        26px;
+
+}
+
+
+.phrase-category h3 {
+
+    font-size:
+        1.05rem;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+/* =========================================================
+   フレーズ一覧
+========================================================= */
+
+.phrase-list {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+
+}
+
+
+/* =========================================================
+   フレーズカード
+========================================================= */
+
+.phrase-card {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    padding:
+        16px;
+
+    transition:
+        box-shadow var(--transition);
+
+}
+
+
+.phrase-text {
+
+    flex:
+        1;
+
+}
+
+
+.phrase-text p {
+
+    margin:
+        0;
+
+}
+
+
+/* 日本語 */
+
+.phrase-text .jp {
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+/* 韓国語 */
+
+.phrase-text .kr {
+
+    color:
+        #555;
+
+    font-size:
+        1rem;
+
+    font-weight:
+        500;
+
+}
+
+
+/* 読み方 */
+
+.phrase-text .kana {
+
+    color:
+        var(--sub-text-color);
+
+    font-size:
+        0.78rem;
+
+}
+
+
+/* =========================================================
+   コピー按钮
+========================================================= */
+
+.copy-button {
+
+    flex-shrink:
+        0;
+
+    background:
+        #FBF1E2;
+
+    color:
+        var(--accent-color);
+
+    border-radius:
+        999px;
+
+    padding:
+        8px 12px;
+
+    font-size:
+        0.75rem;
+
+    transition:
+        background var(--transition);
+
+}
+
+
+.copy-button:hover {
+
+    background:
+        var(--accent-light);
+
+}
+
+
+.copy-button:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+
+/* =========================================================
+   CSS Part 3
+
+   - 韓国豆知識カード
+   - 交通カード
+   - 困ったときカード
+   - ボタン
+   - トースト
+   - モーダル
+========================================================= */
+
+
+/* =========================================================
+   情報カードグリッド
+   韓国豆知識・交通・緊急ページ共通
+========================================================= */
+
+.tips-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        14px;
+
+}
+
+
+/* =========================================================
+   情報カード
+========================================================= */
+
+.info-card {
+
+    padding:
+        20px;
+
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+
+}
+
+
+.info-card:active {
+
+    transform:
+        scale(0.98);
+
+}
+
+
+.info-card h3 {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    font-size:
+        1rem;
+
+    margin-bottom:
+        10px;
+
+}
+
+
+.info-card p {
+
+    color:
+        var(--sub-text-color);
+
+    font-size:
+        0.85rem;
+
+    line-height:
+        1.8;
+
+}
+
+
+/* 強調文字 */
+
+.info-card strong {
+
+    color:
+        var(--accent-color);
+
+    font-size:
+        1.1rem;
+
+}
+
+
+/* =========================================================
+   プライマリーボタン
+========================================================= */
+
+.primary-button {
+
+    display:
+        inline-flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    background:
+        var(--accent-color);
+
+    color:
+        #ffffff;
+
+    padding:
+        12px 22px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.9rem;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+
+}
+
+
+.primary-button:hover {
+
+    opacity:
+        0.9;
+
+}
+
+
+.primary-button:active {
+
+    transform:
+        scale(0.96);
+
+}
+
+
+/* =========================================================
+   ボタン共通フォーカス
+   アクセシビリティ対応
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+
+    outline:
+        3px solid rgba(207,164,106,0.45);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   トースト通知
+========================================================= */
+
+.toast {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        90px;
+
+    transform:
+        translateX(-50%)
+        translateY(30px);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    background:
+        #333333;
+
+    color:
+        #ffffff;
+
+    padding:
+        12px 20px;
+
+    border-radius:
+        999px;
+
+    font-size:
+        0.85rem;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+
+    z-index:
+        1000;
+
+}
+
+
+.toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+
+.toast i {
+
+    color:
+        #8fd694;
+
+}
+
+
+/* =========================================================
+   モーダル
+========================================================= */
+
+.modal {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    z-index:
+        2000;
+
+}
+
+
+.modal.hidden {
+
+    display:
+        none;
+
+}
+
+
+.modal-overlay {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    background:
+        rgba(0,0,0,0.35);
+
+}
+
+
+.modal-content {
+
+    position:
+        relative;
+
+    width:
+        calc(100% - 40px);
+
+    max-width:
+        380px;
+
+    background:
+        #ffffff;
+
+    border-radius:
+        var(--radius);
+
+    padding:
+        26px;
+
+    box-shadow:
+        var(--shadow-hover);
+
+    z-index:
+        1;
+
+}
+
+
+.modal-content h3 {
+
+    font-size:
+        1.1rem;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+.modal-content p {
+
+    color:
+        var(--sub-text-color);
+
+}
+
+
+/* 閉じるボタン */
+
+.modal-close {
+
+    position:
+        absolute;
+
+    top:
+        12px;
+
+    right:
+        14px;
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    border-radius:
+        50%;
+
+    background:
+        #F8F3EA;
+
+    color:
+        var(--accent-color);
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+}
+
+
+/* =========================================================
+   非表示補助
+========================================================= */
+
+[aria-hidden="true"] {
+
+    visibility:
+        hidden;
+
+}
+
+
+[aria-hidden="false"] {
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   スクロールバー調整
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        6px;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        var(--accent-light);
+
+    border-radius:
+        999px;
+
+}
+
+
+/* =========================================================
+   CSS Part 4
+
+   - 固定ボトムナビ
+   - スマホ最適化
+   - PC表示
+   - アニメーション制御
+   - 印刷設定
+   - CSS完成
+========================================================= */
+
+
+/* =========================================================
+   固定ボトムナビゲーション
+========================================================= */
+
+.bottom-nav {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    bottom:
+        0;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        100%;
+
+    max-width:
+        430px;
+
+    height:
+        72px;
+
+    display:
+        flex;
+
+    justify-content:
+        space-around;
+
+    align-items:
+        center;
+
+    background:
+        rgba(255,253,249,0.95);
+
+    backdrop-filter:
+        blur(12px);
+
+    border-top:
+        1px solid var(--border-color);
+
+    z-index:
+        900;
+
+}
+
+
+/* ナビ項目 */
+
+.nav-item {
+
+    flex:
+        1;
+
+    height:
+        100%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    color:
+        #999999;
+
+    font-size:
+        0.68rem;
+
+    transition:
+        color var(--transition);
+
+}
+
+
+.nav-item i {
+
+    font-size:
+        1.15rem;
+
+}
+
+
+.nav-item.active {
+
+    color:
+        var(--accent-color);
+
+}
+
+
+.nav-item:hover {
+
+    color:
+        var(--accent-color);
+
+}
+
+
+/* =========================================================
+   スマートフォン390px最適化
+========================================================= */
+
+@media screen and (max-width:390px) {
+
+
+    .app-header {
+
+        padding:
+            26px 16px 22px;
+
+    }
+
+
+    .header-content {
+
+        padding:
+            22px 18px;
+
+    }
+
+
+    .app-header h1 {
+
+        font-size:
+            1.45rem;
+
+    }
+
+
+    main {
+
+        padding:
+            0 14px;
+
+    }
+
+
+    .menu-grid {
+
+        gap:
+            10px;
+
+    }
+
+
+    .menu-card {
+
+        padding:
+            15px 12px;
+
+        min-height:
+            150px;
+
+    }
+
+
+    .menu-card h3 {
+
+        font-size:
+            0.9rem;
+
+    }
+
+
+    .menu-card p {
+
+        font-size:
+            0.72rem;
+
+    }
+
+
+    .phrase-card {
+
+        padding:
+            14px;
+
+    }
+
+
+    .copy-button {
+
+        padding:
+            7px 10px;
+
+        font-size:
+            0.7rem;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   タブレット・PC表示
+========================================================= */
+
+@media screen and (min-width:768px) {
+
+
+    body {
+
+        background:
+            #f5f0e8;
+
+    }
+
+
+    .app {
+
+        background:
+            var(--bg-color);
+
+        box-shadow:
+            0 0 40px rgba(0,0,0,0.08);
+
+    }
+
+
+}
+
+
+/* =========================================================
+   大型PC表示
+========================================================= */
+
+@media screen and (min-width:1200px) {
+
+
+    .app {
+
+        max-width:
+            430px;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   控えめなアニメーション設定
+   アクセシビリティ対応
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+    * {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   印刷用
+========================================================= */
+
+@media print {
+
+
+    .bottom-nav,
+    .toast,
+    .modal {
+
+        display:
+            none !important;
+
+    }
+
+
+    body {
+
+        background:
+            #ffffff;
+
+    }
+
+
+    .app {
+
+        max-width:
+            100%;
+
+    }
+
+
+}
+
+
+/* =========================================================
+   CSS END
+
+   韓国旅行ガイド
+   style.css 完成
+========================================================= */
