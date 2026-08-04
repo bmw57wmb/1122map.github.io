@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <!-- ======================================================
+        韓国旅行ガイド
+        GitHub Pages対応
+        スマートフォン最優先デザイン
+    ======================================================= -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>韓国旅行ガイド 🇰🇷</title>
+
+    <meta name="description"
+        content="韓国で行われる結婚式のゲスト向け旅行ガイド。初めて韓国へ行く方でも安心して旅行できるスマホ専用ガイドです。">
+
+    <meta name="theme-color" content="#FFFDF9">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ======================================================
+        アプリ全体
+    ======================================================= -->
+    <div class="app">
+
+        <!-- ==================================================
+            ヘッダー
+        =================================================== -->
+        <header class="app-header">
+
+            <div class="header-content">
+
+                <div>
+
+                    <p class="sub-title">
+                        Welcome to Korea
+                    </p>
+
+                    <h1>
+                        🇰🇷 韓国旅行ガイド
+                    </h1>
+
+                    <p class="description">
+                        初めて韓国へ行く方でも安心して旅行できる、
+                        結婚式ゲスト向け旅行ガイドです。
+                    </p>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ==================================================
+            メイン
+        =================================================== -->
+
+        <main>
+
+            <!-- ==============================================
+                ホーム
+            =============================================== -->
+
+            <section id="home" class="page active-page">
+
+                <!-- タイトル -->
+                <div class="section-title">
+
+                    <h2>
+                        旅行メニュー
+                    </h2>
+
+                    <p>
+                        必要な情報をタップしてください。
+                    </p>
+
+                </div>
+
+                <!-- ==========================================
+                    観光マップ
+                =========================================== -->
+
+                <article class="card map-card">
+
+                    <div class="card-header">
+
+                        <div class="icon-circle">
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                🗺️ 観光マップ
+                            </h3>
+
+                            <p>
+                                Wanderlogで作成した旅行マップ
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ======================================
+                        iframe表示領域
+                    ======================================= -->
+
+                    <div id="wanderlog-wrapper">
+
+                        <iframe
+                            id="wanderlog-frame"
+                            title="Wanderlog"
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            src="https://wanderlog.com/view/jqqrxpjxco/gimhae%E3%81%B8%E3%81%AE%E6%97%85%E8%A1%8C/shared">
+                        </iframe>
+
+                    </div>
+
+                    <!-- ======================================
+                        フォールバック
+                        iframe埋め込み不可の場合のみ表示
+                    ======================================= -->
+
+                    <div
+                        id="wanderlog-fallback"
+                        class="hidden">
+
+                        <div class="fallback-content">
+
+                            <div class="fallback-icon">
+
+                                <i class="fa-solid fa-map"></i>
+
+                            </div>
+
+                            <h4>
+                                Wanderlogで観光マップを見る
+                            </h4>
+
+                            <p>
+
+                                ご利用中のブラウザでは
+                                埋め込み表示できませんでした。
+
+                            </p>
+
+                            <a
+                                class="primary-button"
+                                href="https://wanderlog.com/view/jqqrxpjxco/gimhae%E3%81%B8%E3%81%AE%E6%97%85%E8%A1%8C/shared"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                観光マップを開く
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    メニューカード
+                =========================================== -->
+
+                <div class="menu-grid">
+
+                    <!-- フレーズ集 -->
+
+                    <button
+                        class="menu-card"
+                        data-page="phrases">
+
+                        <div class="menu-icon">
+
+                            💬
+
+                        </div>
+
+                        <h3>
+
+                            フレーズ集
+
+                        </h3>
+
+                        <p>
+
+                            空港・ホテル・レストランなど、
+                            よく使う韓国語をまとめました。
+
+                        </p>
+
+                    </button>
+
+                    <!-- 豆知識 -->
+
+                    <button
+                        class="menu-card"
+                        data-page="tips">
+
+                        <div class="menu-icon">
+
+                            🇰🇷
+
+                        </div>
+
+                        <h3>
+
+                            韓国豆知識
+
+                        </h3>
+
+                        <p>
+
+                            T-money・WOWPASS・Wi-Fiなど、
+                            旅行前に知っておくと便利。
+
+                        </p>
+
+                    </button>
+
+                    <!-- 交通 -->
+
+                    <button
+                        class="menu-card"
+                        data-page="transport">
+
+                        <div class="menu-icon">
+
+                            🚇
+
+                        </div>
+
+                        <h3>
+
+                            交通
+
+                        </h3>
+
+                        <p>
+
+                            地下鉄・バス・タクシーなど、
+                            移動方法をご案内します。
+
+                        </p>
+
+                    </button>
+
+                    <!-- 困ったとき -->
+
+                    <button
+                        class="menu-card"
+                        data-page="emergency">
+
+                        <div class="menu-icon">
+
+                            🚨
+
+                        </div>
+
+                        <h3>
+
+                            困ったとき
+
+                        </h3>
+
+                        <p>
+
+                            緊急連絡先や病院、
+                            翻訳アプリなどを掲載しています。
+
+                        </p>
+
+                    </button>
+
+                </div>
+
+                <!-- ==============================================
+                    フレーズ集ページ
+                =============================================== -->
+            </section>
+
+            <section id="phrases" class="page">
+
+                <div class="section-title">
+
+                    <button class="back-button" data-page="home">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        ホームへ戻る
+                    </button>
+
+                    <h2>💬 フレーズ集</h2>
+
+                    <p>
+                        よく使う韓国語をカテゴリごとにまとめました。
+                    </p>
+
+                </div>
+
+                <!-- 検索ボックス -->
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="phraseSearch"
+                        placeholder="日本語・韓国語で検索">
+
+                </div>
+
+                <!-- ==========================================
+                    空港
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>✈️ 空港</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">こんにちは</p>
+                                <p class="kr">안녕하세요</p>
+                                <p class="kana">アンニョンハセヨ</p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="안녕하세요">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    入国審査はどこですか？
+                                </p>
+
+                                <p class="kr">
+                                    입국 심사는 어디예요?
+                                </p>
+
+                                <p class="kana">
+                                    イプグク シムサヌン オディエヨ？
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="입국 심사는 어디예요?">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    荷物を受け取りたいです
+                                </p>
+
+                                <p class="kr">
+                                    짐을 찾고 싶어요
+                                </p>
+
+                                <p class="kana">
+                                    チムル チャッコ シポヨ
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="짐을 찾고 싶어요">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    ホテル
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>🏨 ホテル</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    チェックインお願いします
+                                </p>
+
+                                <p class="kr">
+                                    체크인 부탁드립니다
+                                </p>
+
+                                <p class="kana">
+                                    チェクイン プタットゥリムニダ
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="체크인 부탁드립니다">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    Wi-Fiはありますか？
+                                </p>
+
+                                <p class="kr">
+                                    와이파이 있어요?
+                                </p>
+
+                                <p class="kana">
+                                    ワイパイ イッソヨ？
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="와이파이 있어요?">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    チェックアウトします
+                                </p>
+
+                                <p class="kr">
+                                    체크아웃 하겠습니다
+                                </p>
+
+                                <p class="kana">
+                                    チェクアウッ ハゲッスムニダ
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="체크아웃 하겠습니다">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    レストラン
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>🍴 レストラン</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    2人です
+                                </p>
+
+                                <p class="kr">
+                                    두 명이에요
+                                </p>
+
+                                <p class="kana">
+                                    トゥ ミョンイエヨ
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="두 명이에요">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    おすすめは何ですか？
+                                </p>
+
+                                <p class="kr">
+                                    추천 메뉴가 뭐예요?
+                                </p>
+
+                                <p class="kana">
+                                    チュチョン メニュガ ムォエヨ？
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="추천 메뉴가 뭐예요?">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">
+                                    お会計お願いします
+                                </p>
+
+                                <p class="kr">
+                                    계산 부탁드립니다
+                                </p>
+
+                                <p class="kana">
+                                    ケサン プタットゥリムニダ
+                                </p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="계산 부탁드립니다">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    カフェ
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>☕ カフェ</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">店内で飲みます</p>
+                                <p class="kr">매장에서 먹을게요</p>
+                                <p class="kana">メジャンエソ モグルケヨ</p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="매장에서 먹을게요">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+
+                                <p class="jp">持ち帰ります</p>
+                                <p class="kr">포장해주세요</p>
+                                <p class="kana">ポジャンヘジュセヨ</p>
+
+                            </div>
+
+                            <button
+                                class="copy-button"
+                                data-copy="포장해주세요">
+
+                                コピー
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    ショッピング
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>🛍️ ショッピング</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+                                <p class="jp">これをください</p>
+                                <p class="kr">이거 주세요</p>
+                                <p class="kana">イゴ ジュセヨ</p>
+                            </div>
+
+                            <button class="copy-button"
+                                data-copy="이거 주세요">
+                                コピー
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+                                <p class="jp">試着できますか？</p>
+                                <p class="kr">입어봐도 될까요?</p>
+                                <p class="kana">イボバド テルカヨ？</p>
+                            </div>
+
+                            <button class="copy-button"
+                                data-copy="입어봐도 될까요?">
+                                コピー
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    タクシー
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>🚕 タクシー</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+                                <p class="jp">ここまでお願いします</p>
+                                <p class="kr">여기까지 부탁합니다</p>
+                                <p class="kana">ヨギカジ プタカムニダ</p>
+                            </div>
+
+                            <button class="copy-button"
+                                data-copy="여기까지 부탁합니다">
+                                コピー
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+                                <p class="jp">カードで払えますか？</p>
+                                <p class="kr">카드 돼요?</p>
+                                <p class="kana">カドゥ デヨ？</p>
+                            </div>
+
+                            <button class="copy-button"
+                                data-copy="카드 돼요?">
+                                コピー
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- ==========================================
+                    緊急時
+                =========================================== -->
+
+                <article class="phrase-category">
+
+                    <h3>🚨 緊急時</h3>
+
+                    <div class="phrase-list">
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+                                <p class="jp">助けてください</p>
+                                <p class="kr">도와주세요</p>
+                                <p class="kana">トワジュセヨ</p>
+                            </div>
+
+                            <button class="copy-button"
+                                data-copy="도와주세요">
+                                コピー
+                            </button>
+
+                        </div>
+
+                        <div class="phrase-card">
+
+                            <div class="phrase-text">
+                                <p class="jp">日本語を話せますか？</p>
+                                <p class="kr">일본어 할 수 있어요?</p>
+                                <p class="kana">イルボノ ハル ス イッソヨ？</p>
+                            </div>
+
+                            <button class="copy-button"
+                                data-copy="일본어 할 수 있어요?">
+                                コピー
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+            <!-- ==============================================
+                韓国豆知識
+            =============================================== -->
+
+            <section id="tips" class="page">
+
+                <div class="section-title">
+
+                    <button class="back-button"
+                        data-page="home">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        ホームへ戻る
+
+                    </button>
+
+                    <h2>🇰🇷 韓国豆知識</h2>
+
+                    <p>
+                        韓国旅行中に役立つ情報をまとめました！
+                    </p>
+
+                </div>
+
+                <div class="tips-grid">
+
+                    <article class="info-card">
+
+                        <h3>💳 T-money</h3>
+
+                        <p>
+                            地下鉄・バス・コンビニなどで利用できる
+                            韓国の交通系ICカードです。
+                            慣れない外貨の小銭はなかなか戸惑うので、交通系が1枚あると結構楽かも…！
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>💱 両替</h3>
+
+                        <p>
+                            西面（釜山方面）の両替所は
+                            空港よりレートが良いことが多い。
+                            と思ったら、日本（大阪だと梅田の3ビルなど）の方が安かったりするんだとか。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>💳 クレジットカード</h3>
+
+                        <p>
+                            VISA・Mastercardはほとんどのお店で
+                            利用できます。
+                            韓国はかなりキャッシュレス進んでいます！
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🚇 軽電車</h3>
+
+                        <p>
+                            金海空港に到着したら、モノレールのような2,3両編成の
+                            可愛い電車（Light Rail Transit）で移動します。
+                            預け荷物を受け取って再入場禁止の自動ドアを通ったら、
+                            Gate3と書かれた自動ドアから外へ出ます。
+                            目の前の横断歩道を渡りきったところで右折。
+                            そのまま点字プロックにそって100m弱歩いて行くと、
+                            左手に駅の入り口が見えます。
+
+                            釜山（西面）に観光に行く場合は、改札入って左手の「沙上」方面へ、
+                            ウェディングホール側に行く時は右手の「伽耶大学校」方面へ！
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🚻 トイレ</h3>
+
+                        <p>
+                            地下鉄駅・百貨店・大型商業施設には
+                            無料トイレがあります。
+                            コンビニでは借りれないのでご注意を！
+                            また、ペーパーがないところもちらほら…
+                            ティッシュを必ず携帯してください！
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>📶 Wi-Fi</h3>
+
+                        <p>
+                            カフェ・ホテル・空港では
+                            無料Wi-Fiが利用できる場所が多いです。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🔌 電源</h3>
+
+                        <p>
+                            韓国は220V・CタイプまたはSEタイプの
+                            コンセントが一般的です。
+                            一回、日本の延長コードを持って行って、
+                            小爆発させたことがあります。どうか同じ失敗をせぬよう…！
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🍽 飲食店マナー</h3>
+
+                        <p>
+                            箸やスプーンは金属製が一般的です。
+                            カトラリーが卓上にない時は、机に引き出しが付いていることが多いです！
+                            おかずは無料で提供されることが結構多い💕
+                        </p>
+
+                    </article>
+
+                </div>
+
+                <!-- ==============================================
+                    交通ページ
+                =============================================== -->
+            </section>
+
+            <section id="transport" class="page">
+
+                <div class="section-title">
+
+                    <button class="back-button" data-page="home">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        ホームへ戻る
+                    </button>
+
+                    <h2>🚇 交通</h2>
+
+                    <p>
+                        韓国での移動方法をまとめました。
+                    </p>
+
+                </div>
+
+                <div class="tips-grid">
+
+                    <article class="info-card">
+
+                        <h3>🚇 地下鉄</h3>
+
+                        <p>
+                            ソウル・釜山・大邱など主要都市では
+                            地下鉄が発達しています。
+                            路線番号と駅番号が表示されているため、
+                            初めてでも利用しやすいです。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>💳 T-money</h3>
+
+                        <p>
+                            地下鉄・バス・一部コンビニで利用できる
+                            交通系ICカードです。
+                            チャージして利用します。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🚌 バス</h3>
+
+                        <p>
+                            市内バスはT-moneyで乗車できます。
+                            降車時もカードをタッチしましょう！
+                            座る前に発車が当たり前と思ってください！
+                            しっかり掴まって！！
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🚕 タクシー</h3>
+
+                        <p>
+                            日本よりもかな〜りお安いタクシー料金。
+                            NAVER MapやKakao Tを利用すると便利です。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>📱 地図アプリ</h3>
+
+                        <p>
+                            Google Mapsよりも
+                            NAVER Mapの方が
+                            正確なルート検索ができます。
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            <!-- ==============================================
+                困ったとき
+            =============================================== -->
+
+            <section id="emergency" class="page">
+
+                <div class="section-title">
+
+                    <button class="back-button" data-page="home">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        ホームへ戻る
+
+                    </button>
+
+                    <h2>🚨 困ったとき</h2>
+
+                    <p>
+                        緊急時に役立つ情報をまとめています。
+                    </p>
+
+                </div>
+
+                <div class="tips-grid">
+
+                    <article class="info-card">
+
+                        <h3>🚓 警察</h3>
+
+                        <p>
+                            緊急通報：
+                            <strong>112</strong>
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🚑 救急・消防</h3>
+
+                        <p>
+                            緊急通報：
+                            <strong>119</strong>
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🏥 病院</h3>
+
+                        <p>
+                            大都市には外国人対応病院があります。
+                            ホテルのフロントでも案内してもらえます。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🌐 翻訳アプリ</h3>
+
+                        <p>
+                            Papago・Google翻訳・DeepLが便利です。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🛂 パスポート紛失</h3>
+
+                        <p>
+                            最寄りの警察署で紛失届を提出し、
+                            日本国総領事館へ連絡してください。
+                        </p>
+
+                    </article>
+
+                    <article class="info-card">
+
+                        <h3>🇯🇵 日本国総領事館</h3>
+
+                        <p>
+                            パスポート・事故・事件などの相談ができます。
+                            住所や電話番号は最新情報をご確認ください。
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+            </section>
+
+        </main>
+
+        <!-- ==================================================
+            フッターナビゲーション
+            スマートフォン用固定メニュー
+        =================================================== -->
+        <nav class="bottom-nav" aria-label="メインメニュー">
+
+            <button class="nav-item active" data-page="home" aria-label="ホーム">
+                <i class="fa-solid fa-house"></i>
+                <span>ホーム</span>
+            </button>
+
+            <button class="nav-item" data-page="phrases" aria-label="フレーズ集">
+                <i class="fa-solid fa-comments"></i>
+                <span>フレーズ</span>
+            </button>
+
+            <button class="nav-item" data-page="tips" aria-label="韓国豆知識">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>豆知識</span>
+            </button>
+
+            <button class="nav-item" data-page="transport" aria-label="交通">
+                <i class="fa-solid fa-train-subway"></i>
+                <span>交通</span>
+            </button>
+
+            <button class="nav-item" data-page="emergency" aria-label="困ったとき">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>緊急</span>
+            </button>
+
+        </nav>
+
+    </div>
+
+    <!-- ======================================================
+        コピー完了トースト
+    ======================================================= -->
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+        aria-hidden="true">
+
+        <i class="fa-solid fa-circle-check"></i>
+        <span>コピーしました</span>
+
+    </div>
+
+    <!-- ======================================================
+        共通モーダル
+        （今後の機能追加用）
+    ======================================================= -->
+    <div
+        id="modal"
+        class="modal hidden"
+        aria-hidden="true">
+
+        <div class="modal-overlay"></div>
+
+        <div
+            class="modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title">
+
+            <button
+                id="modalClose"
+                class="modal-close"
+                aria-label="閉じる">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <h3 id="modal-title">
+                タイトル
+            </h3>
+
+            <div id="modalBody">
+
+                内容が表示されます。
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================================
+        JavaScriptテンプレート
+        （script.jsから利用）
+    ======================================================= -->
+
+    <template id="phraseTemplate">
+
+        <div class="phrase-card">
+
+            <div class="phrase-text">
+
+                <p class="jp"></p>
+
+                <p class="kr"></p>
+
+                <p class="kana"></p>
+
+            </div>
+
+            <button
+                class="copy-button">
+
+                コピー
+
+            </button>
+
+        </div>
+
+    </template>
+
+    <template id="infoCardTemplate">
+
+        <article class="info-card">
+
+            <h3></h3>
+
+            <p></p>
+
+        </article>
+
+    </template>
+
+    <!-- ======================================================
+        フッター
+    ======================================================= -->
+
+    <footer class="site-footer">
+
+        <p>
+
+            © 2026 Korea Travel Guide
+
+        </p>
+
+        <p>
+
+            Created for Wedding Guests ❤️
+
+        </p>
+
+    </footer>
+
+    <!-- ======================================================
+        JavaScript
+    ======================================================= -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
