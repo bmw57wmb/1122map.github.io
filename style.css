@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+/*パパゴのURL
+*/
+.translate-btn{
+    display:inline-block;
+    padding:12px 20px;
+    background:#00C73C;
+    color:#fff;
+    text-decoration:none;
+    border-radius:999px;
+    font-weight:600;
+    transition:0.2s;
+}
+
+.translate-btn:hover{
+    opacity:0.9;
+}
 
 /* =========================================================
    写真
