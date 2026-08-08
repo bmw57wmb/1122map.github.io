@@ -1,43 +1,4 @@
 @charset "UTF-8";
-
-/*パパゴのURL
-*/
-.translation-box {
-    text-align: center;
-    padding: 24px 18px;
-    margin: 20px 0;
-    background: #f5f2ec;
-    border-radius: var(--radius);
-}
-
-.translation-title {
-    font-weight: 700;
-    font-size: 1rem;
-    margin-bottom: 8px;
-}
-
-.translation-text {
-    font-size: 0.85rem;
-    color: var(--sub-text-color);
-    margin-bottom: 16px;
-}
-
-.translate-btn {
-    display: inline-block;
-    padding: 12px 22px;
-    background: #00c73c;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    border-radius: 999px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.translate-btn:hover {
-    opacity: 0.85;
-}
-
 /* =========================================================
    写真
 ========================================================= */
@@ -1172,6 +1133,43 @@ main {
 
 }
 
+/*ぱぱごぼたん*/
+
+.translation-box {
+    text-align: center;
+    padding: 24px 18px;
+    margin: 20px 0;
+    background: #f5f2ec;
+    border-radius: var(--radius);
+}
+
+.translation-title {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.translation-text {
+    font-size: 0.85rem;
+    color: var(--sub-text-color);
+    margin-bottom: 16px;
+}
+
+.translate-btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #00c73c;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.translate-btn:hover {
+    opacity: 0.85;
+}
 
 /* =========================================================
    ボタン共通フォーカス
@@ -1779,4 +1777,3 @@ input:focus-visible {
 
 
 }
-
