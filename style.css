@@ -440,6 +440,8 @@ main {
 
     margin-bottom:
         18px;
+        
+    align-items: center;
 
 }
 
@@ -459,9 +461,18 @@ main {
 
     font-size:
         0.8rem;
+        
+    margin: 0;
+    
+    text-align: left;
 
 }
 
+
+.card-header .primary-button {
+    display: inline-flex;
+}
+    
 
 /* =========================================================
    アイコン丸
