@@ -59,6 +59,7 @@
                     </h1>
 
                     <p class="description">
+                        Wonho & Misato presets
                         金海の魅力をぎゅぎゅっと💕
                     </p>
 
@@ -188,6 +189,33 @@
                 =========================================== -->
 
                 <div class="menu-grid">
+                    
+                    <!-- 地図 -->
+
+                    <button
+                        class="menu-card"
+                        data-page="map">
+
+                        <div class="menu-icon">
+
+                            🗺️
+
+                        </div>
+
+                        <h3>
+
+                            おすすめスポット
+
+                        </h3>
+
+                        <p>
+
+                            金海の美味しいお店や文化財を
+                            ピックアップしました
+
+                        </p>
+
+                    </button>
 
                     <!-- フレーズ集 -->
 
@@ -298,6 +326,113 @@
                     </button>
 
                 </div>
+                
+                <!-- 地図-->
+                
+            </section>
+            
+            <section id="map" class="page">
+                
+                <div class="section-title">
+                    
+                    <button class="back-button" data-page="home">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        ホームへ戻る
+                    </button>
+                    
+                    <h2>金海おすすめスポット集📍</h2>
+                    
+            <!-- ==========================================
+                    観光マップ
+                =========================================== -->
+
+                <article class="card map-card">
+
+                    <div class="card-header">
+
+                        <div class="icon-circle">
+
+                            <i class="fa-solid fa-map-location-dot"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                🗺️ 観光マップ
+                            </h3>
+
+                            <p>
+                                金海のおすすめスポットをまとめました❣️
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ======================================
+                        iframe表示領域
+                    ======================================= -->
+
+                    <div id="wanderlog-wrapper">
+
+                        <iframe
+                            id="wanderlog-frame"
+                            title="Wanderlog"
+                            loading="lazy"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            src="https://wanderlog.com/view/jqqrxpjxco/gimhae%E3%81%B8%E3%81%AE%E6%97%85%E8%A1%8C/shared">
+                        </iframe>
+
+                    </div>
+
+                    <!-- ======================================
+                        フォールバック
+                        iframe埋め込み不可の場合のみ表示
+                    ======================================= -->
+
+                    <div
+                        id="wanderlog-fallback"
+                        class="hidden">
+
+                        <div class="fallback-content">
+
+                            <div class="fallback-icon">
+
+                                <i class="fa-solid fa-map"></i>
+
+                            </div>
+
+                            <h4>
+                                Wanderlogで観光マップを見る
+                            </h4>
+
+                            <p>
+
+                                ご利用中のブラウザでは
+                                埋め込み表示できませんでした。
+
+                            </p>
+
+                            <a
+                                class="primary-button"
+                                href="https://wanderlog.com/view/jqqrxpjxco/gimhae%E3%81%B8%E3%81%AE%E6%97%85%E8%A1%8C/shared"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                観光マップを開く
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- 
 
                 <!-- ==============================================
                     フレーズ集ページ
