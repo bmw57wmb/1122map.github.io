@@ -442,6 +442,8 @@ main {
         18px;
         
     align-items: center;
+    
+    flex-direction: column;
 
 }
 
@@ -1092,6 +1094,35 @@ main {
 /* =========================================================
    プライマリーボタン
 ========================================================= */
+
+.page-change-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background: var(--accent-color);
+    color: #ffffff;
+
+    padding: 12px 22px;
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        opacity var(--transition),
+        transform var(--transition);
+}
+
+.page-change-button:hover {
+    opacity: 0.9;
+}
+
+.page-change-button:active {
+    transform: scale(0.96);
+}
 
 .primary-button {
 
