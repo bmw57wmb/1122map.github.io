@@ -913,6 +913,47 @@ document.addEventListener(
     }
 );
 
+/* =================================================
+   オリジナルMAPピン
+================================================= */
+
+const categoryIcons = {
+
+    cafe: "💛",
+
+    restaurant: "💚",
+
+    shopping: "💙",
+
+    culture: "💜",
+
+    beauty: "🩷"
+
+};
+
+
+function createMapIcon(category) {
+
+    return L.divIcon({
+
+        className: "custom-map-marker",
+
+        html: `
+            <div class="map-marker">
+                ${categoryIcons[category]}
+            </div>
+        `,
+
+        iconSize: [42, 42],
+
+        iconAnchor: [21, 42],
+
+        popupAnchor: [0, -42]
+
+    });
+
+}
+
 
 /* =========================================================
    JavaScript END
