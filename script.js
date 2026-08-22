@@ -43,39 +43,67 @@ document.addEventListener(
 
 
 
-        /* =================================================
-           ページ切替関数
-
-           data-page属性を利用して表示変更
-        ================================================= */
-
-        function showPage(pageId) {
 
 
-            pages.forEach(
-                (page) => {
+/* =================================================
+   ページ切替関数
 
+   data-page属性を利用して表示変更
+================================================= */
 
-                    if (
-                        page.id === pageId
-                    ) {
+function showPage(pageId, addHistory = true) {
 
-                        page.classList.add(
-                            "active-page"
-                        );
+    pages.forEach(
+        (page) => {
 
-                    } else {
+            if (page.id === pageId) {
 
-                        page.classList.remove(
-                            "active-page"
-                        );
+                page.classList.add(
+                    "active-page"
+                );
 
-                    }
+            } else {
 
-                }
-            );
+                page.classList.remove(
+                    "active-page"
+                );
 
+            }
 
+        }
+    );
+
+    /* ブラウザの履歴にページを追加 */
+    if (addHistory) {
+
+        history.pushState(
+            { page: pageId },
+            "",
+            "#" + pageId
+        );
+
+    }
+
+}
+
+/* =================================================
+   ブラウザの「戻る」操作
+================================================= */
+
+window.addEventListener(
+    "popstate",
+    (event) => {
+
+        const pageId =
+            event.state?.page || "home";
+
+        showPage(
+            pageId,
+            false
+        );
+
+    }
+);
 
             /* ------------------------------
                ナビ状態更新
@@ -169,6 +197,16 @@ document.addEventListener(
 
 
     }
+);
+
+/* =================================================
+   初期ページを履歴に登録
+================================================= */
+
+history.replaceState(
+    { page: "home" },
+    "",
+    "#home"
 );
 
 /* =========================================================
