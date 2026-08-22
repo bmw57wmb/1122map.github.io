@@ -138,23 +138,18 @@ document.addEventListener(
 
                         const target =
                             button.dataset.page;
-
-
-
+                       
                         if(target){
-
-    showPage(
-        target
-    );
-
-    history.pushState(
-        { page: target },
-        "",
-        "#" + target
-    );
-
-}
-
+                           showPage(
+                              target
+                           );
+                           
+                           history.pushState(
+                              { page: target },
+                              "",
+                              "#" + target
+                           );
+                        }
 
                     }
                 );
@@ -172,15 +167,13 @@ document.addEventListener(
         showPage(
             "home"
         );
+       history.replaceState(
+          { page: "home" },
+          "",
+          "#home"
+       );
 
-history.replaceState(
-    { page: "home" },
-    "",
-    "#home"
-);
-
-/*
-=================================================
+/*=================================================
    Galaxy / ブラウザの「戻る」操作
 ================================================= */
 
@@ -194,11 +187,10 @@ window.addEventListener(
         showPage(
             pageId
         );
-
     }
 );
 
-    }
+}
 );
 
 /* =========================================================
