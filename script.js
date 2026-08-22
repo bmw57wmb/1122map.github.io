@@ -864,7 +864,54 @@ document.addEventListener(
 );
 
 
+/* =================================================
+   Leaflet 金海MAP
+================================================= */
 
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const mapElement =
+            document.getElementById(
+                "gimhae-map"
+            );
+
+        if (!mapElement) {
+            return;
+        }
+
+
+        /* ------------------------------
+           地図を作成
+        ------------------------------ */
+
+        const map =
+            L.map(
+                "gimhae-map"
+            ).setView(
+                [35.228, 128.889],
+                13
+            );
+
+
+        /* ------------------------------
+           OpenStreetMapを表示
+        ------------------------------ */
+
+        L.tileLayer(
+            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                attribution:
+                    '&copy; OpenStreetMap contributors'
+            }
+        ).addTo(
+            map
+        );
+
+
+    }
+);
 
 
 /* =========================================================
