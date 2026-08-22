@@ -1872,3 +1872,86 @@ input:focus-visible {
 
 }
 
+/* =================================================
+   MAP ポップアップ
+================================================= */
+
+.map-popup {
+
+    width: 240px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+}
+
+
+.map-popup-image {
+
+    width: 100%;
+    height: 150px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.map-popup-content {
+
+    padding: 14px;
+
+}
+
+
+.map-popup h3 {
+
+    margin: 0 0 10px;
+
+    font-size: 18px;
+
+}
+
+
+.map-popup-description {
+
+    margin: 0 0 12px;
+
+    line-height: 1.6;
+
+}
+
+
+.map-popup-info {
+
+    margin: 6px 0;
+
+    font-size: 13px;
+
+}
+
+
+.map-popup-button {
+
+    display: block;
+
+    margin-top: 14px;
+
+    padding: 10px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    background: #333;
+
+    color: white;
+
+    font-size: 13px;
+
+}
+
