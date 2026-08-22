@@ -42,159 +42,136 @@ document.addEventListener(
             );
 
 
-/* =================================================
-   ページ切替関数
 
-   data-page属性を利用して表示変更
-================================================= */
+        /* =================================================
+           ページ切替関数
 
-function showPage(pageId, addHistory = true) {
+           data-page属性を利用して表示変更
+        ================================================= */
 
-
-    pages.forEach(
-        (page) => {
+        function showPage(pageId) {
 
 
-            if (
-                page.id === pageId
-            ) {
+            pages.forEach(
+                (page) => {
 
-                page.classList.add(
-                    "active-page"
-                );
 
-            } else {
+                    if (
+                        page.id === pageId
+                    ) {
 
-                page.classList.remove(
-                    "active-page"
-                );
+                        page.classList.add(
+                            "active-page"
+                        );
 
-            }
+                    } else {
+
+                        page.classList.remove(
+                            "active-page"
+                        );
+
+                    }
+
+                }
+            );
+
+
+
+            /* ------------------------------
+               ナビ状態更新
+            ------------------------------ */
+
+            navItems.forEach(
+                (item) => {
+
+
+                    if (
+                        item.dataset.page === pageId
+                    ) {
+
+                        item.classList.add(
+                            "active"
+                        );
+
+                    } else {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+
+
+                }
+            );
+
+
+
+            /* ------------------------------
+               ページ上部へ移動
+            ------------------------------ */
+
+            window.scrollTo(
+                {
+                    top:0,
+                    behavior:"smooth"
+                }
+            );
 
 
         }
+
+
+
+        /* =================================================
+           ページボタンイベント
+        ================================================= */
+
+        pageButtons.forEach(
+            (button) => {
+
+
+                button.addEventListener(
+                    "click",
+                    () => {
+
+
+                        const target =
+                            button.dataset.page;
+
+
+
+                        if(target){
+
+    showPage(
+        target
     );
 
-
-    /* ------------------------------
-       ナビ状態更新
-    ------------------------------ */
-
-    navItems.forEach(
-        (item) => {
-
-
-            if (
-                item.dataset.page === pageId
-            ) {
-
-                item.classList.add(
-                    "active"
-                );
-
-            } else {
-
-                item.classList.remove(
-                    "active"
-                );
-
-            }
-
-
-        }
+    history.pushState(
+        { page: target },
+        "",
+        "#" + target
     );
-
-
-    /* ------------------------------
-       ページ上部へ移動
-    ------------------------------ */
-
-    window.scrollTo(
-        {
-            top: 0,
-            behavior: "smooth"
-        }
-    );
-
-
-    /* ------------------------------
-       ブラウザ履歴に追加
-    ------------------------------ */
-
-    if (addHistory) {
-
-        history.pushState(
-            { page: pageId },
-            "",
-            "#" + pageId
-        );
-
-    }
-
 
 }
 
 
-/* =================================================
-   ブラウザの「戻る」操作
-================================================= */
-
-window.addEventListener(
-    "popstate",
-    (event) => {
-
-
-        const pageId =
-            event.state?.page || "home";
-
-
-        showPage(
-            pageId,
-            false
-        );
-
-
-    }
-);
-
-
-/* =================================================
-   ページボタンイベント
-================================================= */
-
-pageButtons.forEach(
-    (button) => {
-
-
-        button.addEventListener(
-            "click",
-            () => {
-
-
-                const target =
-                    button.dataset.page;
-
-
-                if (target) {
-
-                    showPage(
-                        target
-                    );
-
-                }
+                    }
+                );
 
 
             }
         );
 
 
-    }
-);
 
+        /* =================================================
+           初期ページ設定
+        ================================================= */
 
-/* =================================================
-   初期ページ設定
-================================================= */
+        showPage(
+            "home"
+        );
 
 history.replaceState(
     { page: "home" },
@@ -202,9 +179,26 @@ history.replaceState(
     "#home"
 );
 
-showPage(
-    "home",
-    false
+/*
+=================================================
+   Galaxy / ブラウザの「戻る」操作
+================================================= */
+
+window.addEventListener(
+    "popstate",
+    (event) => {
+
+        const pageId =
+            event.state?.page || "home";
+
+        showPage(
+            pageId
+        );
+
+    }
+);
+
+    }
 );
 
 /* =========================================================
@@ -877,3 +871,14 @@ document.addEventListener(
     }
 );
 
+
+
+
+
+/* =========================================================
+   JavaScript END
+
+   韓国旅行ガイド
+   script.js 完成
+
+========================================================= */
