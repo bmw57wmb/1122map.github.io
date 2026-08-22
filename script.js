@@ -915,14 +915,160 @@ document.addEventListener(
 const spots = [
 
     {
-        name: "おすすめCafe",
+        name: "Cafe A",
         category: "cafe",
         lat: 35.228,
         lng: 128.889,
-        description: "金海でおすすめのカフェです♡",
-        hours: "10:00〜20:00"
+
+        image: "images/cafe-a.jpg",
+
+        description:
+            "プリンがおすすめ♡",
+
+        hours:
+            "10:00〜20:00",
+
+        address:
+            "金海市 ○○○",
+
+        googleMaps:
+            "https://maps.google.com/"
+    },
+
+
+    {
+        name: "Cafe B",
+        category: "cafe",
+        lat: 35.231,
+        lng: 128.892,
+
+        image: "images/cafe-b.jpg",
+
+        description:
+            "景色がきれいなカフェ♡",
+
+        hours:
+            "11:00〜21:00",
+
+        address:
+            "金海市 ○○○",
+
+        googleMaps:
+            "https://maps.google.com/"
     }
+
 ];
+       /* ------------------------------
+   カテゴリ別アイコン
+------------------------------ */
+
+const categoryIcons = {
+
+    cafe: "💛",
+
+    restaurant: "💚",
+
+    shopping: "💙",
+
+    culture: "💜",
+
+    beauty: "🩷"
+
+};
+
+
+/* ------------------------------
+   ピンを作成
+------------------------------ */
+
+spots.forEach(
+    (spot) => {
+
+        const icon =
+            L.divIcon({
+
+                className:
+                    "custom-map-marker",
+
+                html: `
+                    <div class="map-marker">
+                        ${categoryIcons[spot.category]}
+                    </div>
+                `,
+
+                iconSize: [
+                    42,
+                    42
+                ],
+
+                iconAnchor: [
+                    21,
+                    42
+                ],
+
+                popupAnchor: [
+                    0,
+                    -42
+                ]
+
+            });
+
+
+        L.marker(
+            [
+                spot.lat,
+                spot.lng
+            ],
+            {
+                icon: icon
+            }
+        )
+        .addTo(map)
+           .bindPopup(
+    `
+        <div class="map-popup">
+
+            <img
+                src="${spot.image}"
+                class="map-popup-image"
+            >
+
+            <div class="map-popup-content">
+
+                <h3>
+                    ${categoryIcons[spot.category]}
+                    ${spot.name}
+                </h3>
+
+                <p class="map-popup-description">
+                    ${spot.description}
+                </p>
+
+                <p class="map-popup-info">
+                    🕐 ${spot.hours}
+                </p>
+
+                <p class="map-popup-info">
+                    📍 ${spot.address}
+                </p>
+
+                <a
+                    href="${spot.googleMaps}"
+                    target="_blank"
+                    class="map-popup-button"
+                >
+                    Google Mapsで開く
+                </a>
+
+            </div>
+
+        </div>
+    `
+);
+
+
+    }
+);
     }
 );
 /* =========================================================
