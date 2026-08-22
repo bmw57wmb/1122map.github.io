@@ -42,9 +42,6 @@ document.addEventListener(
             );
 
 
-
-
-
 /* =================================================
    ページ切替関数
 
@@ -53,10 +50,14 @@ document.addEventListener(
 
 function showPage(pageId, addHistory = true) {
 
+
     pages.forEach(
         (page) => {
 
-            if (page.id === pageId) {
+
+            if (
+                page.id === pageId
+            ) {
 
                 page.classList.add(
                     "active-page"
@@ -70,10 +71,56 @@ function showPage(pageId, addHistory = true) {
 
             }
 
+
         }
     );
 
-    /* ブラウザの履歴にページを追加 */
+
+    /* ------------------------------
+       ナビ状態更新
+    ------------------------------ */
+
+    navItems.forEach(
+        (item) => {
+
+
+            if (
+                item.dataset.page === pageId
+            ) {
+
+                item.classList.add(
+                    "active"
+                );
+
+            } else {
+
+                item.classList.remove(
+                    "active"
+                );
+
+            }
+
+
+        }
+    );
+
+
+    /* ------------------------------
+       ページ上部へ移動
+    ------------------------------ */
+
+    window.scrollTo(
+        {
+            top: 0,
+            behavior: "smooth"
+        }
+    );
+
+
+    /* ------------------------------
+       ブラウザ履歴に追加
+    ------------------------------ */
+
     if (addHistory) {
 
         history.pushState(
@@ -84,7 +131,9 @@ function showPage(pageId, addHistory = true) {
 
     }
 
+
 }
+
 
 /* =================================================
    ブラウザの「戻る」操作
@@ -94,119 +143,68 @@ window.addEventListener(
     "popstate",
     (event) => {
 
+
         const pageId =
             event.state?.page || "home";
+
 
         showPage(
             pageId,
             false
         );
 
+
     }
 );
 
-            /* ------------------------------
-               ナビ状態更新
-            ------------------------------ */
 
-            navItems.forEach(
-                (item) => {
+/* =================================================
+   ページボタンイベント
+================================================= */
+
+pageButtons.forEach(
+    (button) => {
 
 
-                    if (
-                        item.dataset.page === pageId
-                    ) {
+        button.addEventListener(
+            "click",
+            () => {
 
-                        item.classList.add(
-                            "active"
-                        );
 
-                    } else {
+                const target =
+                    button.dataset.page;
 
-                        item.classList.remove(
-                            "active"
-                        );
 
-                    }
+                if (target) {
 
+                    showPage(
+                        target
+                    );
 
                 }
-            );
-
-
-
-            /* ------------------------------
-               ページ上部へ移動
-            ------------------------------ */
-
-            window.scrollTo(
-                {
-                    top:0,
-                    behavior:"smooth"
-                }
-            );
-
-
-        }
-
-
-
-        /* =================================================
-           ページボタンイベント
-        ================================================= */
-
-        pageButtons.forEach(
-            (button) => {
-
-
-                button.addEventListener(
-                    "click",
-                    () => {
-
-
-                        const target =
-                            button.dataset.page;
-
-
-
-                        if(target){
-
-                            showPage(
-                                target
-                            );
-
-                        }
-
-
-                    }
-                );
 
 
             }
         );
 
 
-
-        /* =================================================
-           初期ページ設定
-        ================================================= */
-
-        showPage(
-            "home"
-        );
-
-
     }
 );
 
+
 /* =================================================
-   初期ページを履歴に登録
+   初期ページ設定
 ================================================= */
 
 history.replaceState(
     { page: "home" },
     "",
     "#home"
+);
+
+showPage(
+    "home",
+    false
 );
 
 /* =========================================================
@@ -879,14 +877,3 @@ document.addEventListener(
     }
 );
 
-
-
-
-
-/* =========================================================
-   JavaScript END
-
-   韓国旅行ガイド
-   script.js 完成
-
-========================================================= */
