@@ -908,67 +908,21 @@ document.addEventListener(
             map
         );
 
+/* ------------------------------
+   スポットデータ
+------------------------------ */
 
-        /* ------------------------------
-           テスト用Cafeピン
-        ------------------------------ */
+const spots = [
 
-        const cafeIcon =
-            L.divIcon({
-
-                className:
-                    "custom-map-marker",
-
-                html: `
-                    <div class="map-marker">
-                        💛
-                    </div>
-                `,
-
-                iconSize: [
-                    42,
-                    42
-                ],
-
-                iconAnchor: [
-                    21,
-                    42
-                ],
-
-                popupAnchor: [
-                    0,
-                    -42
-                ]
-
-            });
-
-
-        /* ------------------------------
-           ピンを地図に追加
-        ------------------------------ */
-
-        L.marker(
-            [35.228, 128.889],
-            {
-                icon: cafeIcon
-            }
-        )
-        .addTo(
-            map
-        )
-        .bindPopup(
-            `
-                <strong>
-                    ☕ おすすめCafe
-                </strong>
-
-                <br>
-
-                金海おすすめカフェ
-            `
-        );
-
-
+    {
+        name: "おすすめCafe",
+        category: "cafe",
+        lat: 35.228,
+        lng: 128.889,
+        description: "金海でおすすめのカフェです♡",
+        hours: "10:00〜20:00"
+    }
+];
     }
 );
 /* =========================================================
