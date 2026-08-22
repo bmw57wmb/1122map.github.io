@@ -863,7 +863,6 @@ document.addEventListener(
     }
 );
 
-
 /* =================================================
    Leaflet 金海MAP
 ================================================= */
@@ -896,61 +895,82 @@ document.addEventListener(
 
 
         /* ------------------------------
-           OpenStreetMapを表示
+           OpenStreetMap
         ------------------------------ */
 
         L.tileLayer(
             "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
             {
                 attribution:
-                    '&copy; OpenStreetMap contributors'
+                    "&copy; OpenStreetMap contributors"
             }
         ).addTo(
             map
         );
 
 
+        /* ------------------------------
+           テスト用Cafeピン
+        ------------------------------ */
+
+        const cafeIcon =
+            L.divIcon({
+
+                className:
+                    "custom-map-marker",
+
+                html: `
+                    <div class="map-marker">
+                        💛
+                    </div>
+                `,
+
+                iconSize: [
+                    42,
+                    42
+                ],
+
+                iconAnchor: [
+                    21,
+                    42
+                ],
+
+                popupAnchor: [
+                    0,
+                    -42
+                ]
+
+            });
+
+
+        /* ------------------------------
+           ピンを地図に追加
+        ------------------------------ */
+
+        L.marker(
+            [35.228, 128.889],
+            {
+                icon: cafeIcon
+            }
+        )
+        .addTo(
+            map
+        )
+        .bindPopup(
+            `
+                <strong>
+                    ☕ おすすめCafe
+                </strong>
+
+                <br>
+
+                金海おすすめカフェ
+            `
+        );
+
+
     }
 );
-
-/* ------------------------------
-   テスト用Cafeピン
------------------------------- */
-
-const cafeIcon = L.divIcon({
-
-    className: "custom-map-marker",
-
-    html: `
-        <div class="map-marker">
-            💛
-        </div>
-    `,
-
-    iconSize: [42, 42],
-
-    iconAnchor: [21, 42],
-
-    popupAnchor: [0, -42]
-
-});
-
-
-L.marker(
-    [35.228, 128.889],
-    {
-        icon: cafeIcon
-    }
-)
-.addTo(map)
-.bindPopup(
-    `
-        <strong>☕ おすすめCafe</strong>
-        <br>
-        金海おすすめカフェ
-    `
-);
-
 /* =========================================================
    JavaScript END
 
