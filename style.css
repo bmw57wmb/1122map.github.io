@@ -1819,3 +1819,19 @@ input:focus-visible {
 
 
 }
+
+.instagram-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 18px;
+    border-radius: 20px;
+    background: #f4a7c1;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.instagram-button:hover {
+    opacity: 0.8;
+}
